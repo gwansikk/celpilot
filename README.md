@@ -6,9 +6,9 @@
 </p>
 
 ## AutoWriter 1
+반복적인 문서작업을 양식파일과 정리된 데이터 파일을 통해서 한 번에 엑셀 파일을 만들어줍니다.
 
 ## 📚 Qucik start
-Close Alpha Test
 
 ## 🚀 TechStack
 - Python
