@@ -7,7 +7,7 @@ from tkinter import *
 # GLOBAL VARIABLES
 root = Tk()
 root.title("AutoWriter")
-root.geometry("400x400")
+root.geometry("400x600+200+200")
 root.resizable( False, False)
 
 # FUNTIONS
@@ -17,8 +17,8 @@ def addFile():
 
 # GUI
 fileSelectLabel = Label(root, text="File Select")
-fileSelectButton = Button(root, text = "양식", command=addFile)
-fileSelectLabel.grid(row=0, column=0)
+fileSelectButton = Button(root, text = "양식", command=addFile, padx=5, pady=5)
+fileSelectLabel.grid(row=0, column=0, padx=3, pady=3)
 fileSelectButton.grid(row=0, column=1)
 
 dataSelectLabel = Label(root, text = "Data Select")
@@ -41,8 +41,8 @@ progressbar = ttk.Progressbar(root, maximum = 100, mode="indeterminate")
 progressbar.grid(row=4, column=0)
 
 # LOG LIST BOX 
-logbox = Listbox(root, selectmode="extended", height=0)
-logbox.grid(row=5, column=0)
+logbox = Listbox(root, selectmode="extended", height=10)
+logbox.grid(row=5, column=0, columnspan=2, sticky="NEWS", padx=5, pady=5)
 
 
 root.mainloop()
