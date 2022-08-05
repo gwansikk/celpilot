@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import (QApplication, QMainWindow, QAction, QWidget, qApp, QDesktopWidget, QGridLayout, QLabel, QPushButton, QLineEdit, QTextEdit)
+from PyQt5.QtWidgets import (QApplication, QMainWindow, QAction, QWidget, qApp, QDesktopWidget, QGridLayout, QLabel, QPushButton, QLineEdit, QTextEdit, QListWidget)
 
 class MainView(QMainWindow):
 
@@ -8,18 +8,29 @@ class MainView(QMainWindow):
         self.initUI()
  
     def initUI(self):
+
+        # 리스트
+        listWidget = QListWidget()
+        listWidget.addItem("프로그램이 정상적으로 실행되었습니다!")
+        listWidget.currentItemChanged.connect(self.ItemChange)
+
+        # 버튼
+        self.buttonSelectDoc = QPushButton("양식 파일", self)
+        self.buttonSelectData = QPushButton("데이터 파일", self)
+        self.buttonSelectSave = QPushButton("저장 경로", self)
+
         # 레이아웃
         widget = QWidget()
         grid = QGridLayout(widget)
 
-        grid.addWidget(QLabel('양식:'), 0, 0)
-        grid.addWidget(QLabel('데이터:'), 1, 0)
-        grid.addWidget(QLabel('저장:'), 2, 0)
+        grid.addWidget(self.buttonSelectDoc, 0, 1)
+        grid.addWidget(self.buttonSelectData, 1, 1)
+        grid.addWidget(self.buttonSelectSave, 2, 1)
 
-        grid.addWidget(QLineEdit(), 0, 1)
-        grid.addWidget(QLineEdit(), 1, 1)
-        grid.addWidget(QLineEdit(), 2, 1)
-        grid.addWidget(QTextEdit(), 3, 1)
+        grid.addWidget(QLineEdit(), 0, 0)
+        grid.addWidget(QLineEdit(), 1, 0)
+        grid.addWidget(QLineEdit(), 2, 0)
+        grid.addWidget(listWidget, 3, 0, 1, 0)
 
         self.setCentralWidget(widget)
 
@@ -27,27 +38,32 @@ class MainView(QMainWindow):
         exitAction = QAction('종료', self)
         exitAction.setStatusTip('프로그램 종료')
         exitAction.triggered.connect(qApp.quit)
+
         # 메뉴바
         menuBar = self.menuBar()
         menuBar.setNativeMenuBar(False)
         filemenu = menuBar.addMenu('&파일')
-        filemenu.addAction(exitAction)
         menuBar.addMenu('&편집')
 
-        # 상태바
-        self.statusBar().showMessage('준비완료')
+        filemenu.addAction(exitAction)
+
+        # 상태바, 업데이트 확인
+        self.statusBar().showMessage('최신버전입니다!')
 
         # 윈도우
         self.setWindowTitle('AutoWriter')
-        self.resize(400, 600)
-        self.center()
+        self.setFixedSize(400, 600)
+        self.WindowCenter()
         self.show()
 
-    def center(self):
+    def WindowCenter(self):
         qr = self.frameGeometry()
         cp = QDesktopWidget().availableGeometry().center()
         qr.moveCenter(cp)
         self.move(qr.topLeft())
+    
+    def ItemChange(self, item):
+        print(item.text())
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

@@ -6,12 +6,15 @@
 </p>
 
 ## AutoWriter 1
-양식파일과 데이터파일을 통해서 반복적인 문서작업을 자동화하여 쉽게 파일을 만들어 줍니다. 
+
+양식파일과 데이터파일을 통해서 반복적인 문서작업을 자동화하여 쉽게 파일을 만들어 줍니다.
 
 ## 📚 Quick start
 
 ## 🚀 TechStack
+
 - Python
+- Qtpy5
 - openpyxl
 
 ## 💡 Copyright and License
