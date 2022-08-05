@@ -1,5 +1,6 @@
 import sys
-from PyQt5.QtWidgets import (QApplication, QMainWindow, QAction, QWidget, qApp, QDesktopWidget, QGridLayout, QLabel, QPushButton, QLineEdit, QTextEdit, QListWidget)
+from PySide6.QtWidgets import (QApplication, QMainWindow, QWidget, QGridLayout, QLabel, QPushButton, QLineEdit, QTextEdit, QListWidget)
+from PySide6.QtGui import (QAction, QGuiApplication)
 
 class MainView(QMainWindow):
 
@@ -37,7 +38,7 @@ class MainView(QMainWindow):
         # 기능 
         exitAction = QAction('종료', self)
         exitAction.setStatusTip('프로그램 종료')
-        exitAction.triggered.connect(qApp.quit)
+        exitAction.triggered.connect(QApplication.quit)
 
         # 메뉴바
         menuBar = self.menuBar()
@@ -58,7 +59,7 @@ class MainView(QMainWindow):
 
     def WindowCenter(self):
         qr = self.frameGeometry()
-        cp = QDesktopWidget().availableGeometry().center()
+        cp = QGuiApplication.primaryScreen().availableGeometry().center()
         qr.moveCenter(cp)
         self.move(qr.topLeft())
     

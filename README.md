@@ -14,7 +14,7 @@
 ## 🚀 TechStack
 
 - Python
-- Qtpy5
+- QtSide6
 - openpyxl
 
 ## 💡 Copyright and License
