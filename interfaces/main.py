@@ -23,6 +23,7 @@ class MainView(QMainWindow):
         self.buttonSelectDoc = QPushButton("양식 파일", self)
         self.buttonSelectData = QPushButton("데이터 파일", self)
         self.buttonSelectSave = QPushButton("저장 경로", self)
+        self.buttonStart = QPushButton("자동화", self)
 
         self.buttonSelectDoc.clicked.connect(self.FileSelectDoc)
         self.buttonSelectData.clicked.connect(self.FileSelectData)
@@ -35,11 +36,12 @@ class MainView(QMainWindow):
         grid.addWidget(self.buttonSelectDoc, 0, 1)
         grid.addWidget(self.buttonSelectData, 1, 1)
         grid.addWidget(self.buttonSelectSave, 2, 1)
+        grid.addWidget(self.buttonStart, 3, 0, 1, 0)
 
         grid.addWidget(self.inputPathDoc, 0, 0)
         grid.addWidget(self.inputPathData, 1, 0)
         grid.addWidget(self.inputPathSave, 2, 0)
-        grid.addWidget(self.listWidget, 3, 0, 1, 0)
+        grid.addWidget(self.listWidget, 4, 0, 1, 0)
 
         self.setCentralWidget(widget)
 
