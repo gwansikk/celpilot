@@ -11,7 +11,9 @@
 
 ## Quick start
 
-준비중입니다.
+Windows :
+
+macOS :
 
 ## TechStack
 
@@ -21,6 +23,6 @@
 
 ## Preview
 
-<img src = "src/alpha.png" width = "50%">
+<img src = "src/preview.png" width = "50%">
 
 ## 💡 Copyright and License

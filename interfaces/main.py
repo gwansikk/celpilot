@@ -18,12 +18,21 @@ class MainView(QMainWindow):
         self.inputPathDoc = QLineEdit()
         self.inputPathData = QLineEdit()
         self.inputPathSave = QLineEdit()
+        self.inputFileName = QLineEdit()
+
+        # 입력창 설명
+        self.inputPathDoc.setPlaceholderText("양식파일 경로")
+        self.inputPathData.setPlaceholderText("데이터파일 경로")
+        self.inputPathSave.setPlaceholderText("저장 경로")
+        self.inputFileName.setPlaceholderText("파일이름")
+
+        # �
 
         # 버튼
-        self.buttonSelectDoc = QPushButton("양식 파일", self)
-        self.buttonSelectData = QPushButton("데이터 파일", self)
-        self.buttonSelectSave = QPushButton("저장 경로", self)
-        self.buttonStart = QPushButton("자동화", self)
+        self.buttonSelectDoc = QPushButton("선택", self)
+        self.buttonSelectData = QPushButton("선택", self)
+        self.buttonSelectSave = QPushButton("선택", self)
+        self.buttonStart = QPushButton("시작!", self)
 
         self.buttonSelectDoc.clicked.connect(self.FileSelectDoc)
         self.buttonSelectData.clicked.connect(self.FileSelectData)
@@ -36,12 +45,13 @@ class MainView(QMainWindow):
         grid.addWidget(self.buttonSelectDoc, 0, 1)
         grid.addWidget(self.buttonSelectData, 1, 1)
         grid.addWidget(self.buttonSelectSave, 2, 1)
-        grid.addWidget(self.buttonStart, 3, 0, 1, 0)
+        grid.addWidget(self.buttonStart, 3, 1)
 
         grid.addWidget(self.inputPathDoc, 0, 0)
         grid.addWidget(self.inputPathData, 1, 0)
         grid.addWidget(self.inputPathSave, 2, 0)
-        grid.addWidget(self.listWidget, 4, 0, 1, 0)
+        grid.addWidget(self.inputFileName, 3, 0)
+        grid.addWidget(self.listWidget, 5, 0, 1, 0)
 
         self.setCentralWidget(widget)
 
@@ -53,8 +63,8 @@ class MainView(QMainWindow):
         # 메뉴바
         menuBar = self.menuBar()
         menuBar.setNativeMenuBar(False)
-        filemenu = menuBar.addMenu('&파일')
-        menuBar.addMenu('&편집')
+        filemenu = menuBar.addMenu('&AutoWriter')
+        menuBar.addMenu('&도움말')
 
         filemenu.addAction(exitAction)
 
