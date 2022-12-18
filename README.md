@@ -7,7 +7,6 @@
     <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=Python&logoColor=white"/>
     <br><br>
     반복적인 문서작업을 쉽고 빠르게 만들 수 있는 엑셀 자동화 프로그램
-
 </div>
 
 ## AutoWriter
@@ -16,10 +15,13 @@
 
 ## Installation
 
-Windows / macOS : 준비중
+| OS      | STABLE   | BETA   |
+| ------- | -------- | ------ |
+| Windows | ------   | ------ |
+| macOS   | -------- | ------ |
 
 ## Preview
 
 <div align="center">
-    <img src = "src/preview.png">
+    <img src = "screenshot/preview.png" width = "50%">
 </div>
