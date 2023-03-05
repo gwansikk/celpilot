@@ -10,7 +10,7 @@ setup(
     install_requires=["PySide6", "openpyxl"],
     entry_points={
         'console_scripts': [
-            'start=main:main',
+            'start=app.main:main',
         ],
     },
 )

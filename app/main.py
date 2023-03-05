@@ -1,5 +1,5 @@
 import sys
-from packages.ui.main import MainView
+from interfaces.gui import MainView
 from PySide6.QtWidgets import QApplication
 
 def main():
