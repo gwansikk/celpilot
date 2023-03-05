@@ -1,5 +1,8 @@
+<!-- markdownlint-disable MD033 -->
+<!-- markdownlint-disable MD041 -->
+
 <div align="center">
-    <img width="150" src="src/logo.png" alt="{Logo}"><br />
+    <img width="100" src="screenshots/logo.png" alt="{Logo}"><br />
     <b>AutoWriter</b>
     <br>
         <img src="https://img.shields.io/badge/license-GLPv3-blue"/>
