@@ -1,9 +1,7 @@
-import sys
 from PySide6.QtWidgets import (QApplication, QMainWindow, QWidget, QGridLayout, QPushButton, QLineEdit, QListWidget, QFileDialog)
 from PySide6.QtGui import (QAction, QGuiApplication)
 
 class MainView(QMainWindow):
-
     def __init__(self):
         super().__init__()
         self.initUI()
@@ -25,8 +23,6 @@ class MainView(QMainWindow):
         self.inputPathData.setPlaceholderText("데이터파일 경로")
         self.inputPathSave.setPlaceholderText("저장 경로")
         self.inputFileName.setPlaceholderText("파일이름")
-
-        # �
 
         # 버튼
         self.buttonSelectDoc = QPushButton("선택", self)
@@ -63,10 +59,10 @@ class MainView(QMainWindow):
         # 메뉴바
         menuBar = self.menuBar()
         menuBar.setNativeMenuBar(False)
-        filemenu = menuBar.addMenu('&AutoWriter')
+        fileMenu = menuBar.addMenu('&AutoWriter')
         menuBar.addMenu('&도움말')
 
-        filemenu.addAction(exitAction)
+        fileMenu.addAction(exitAction)
 
         # 상태바, 업데이트 확인
         self.statusBar().showMessage('최신버전입니다!')
@@ -104,8 +100,3 @@ class MainView(QMainWindow):
         path = QFileDialog.getExistingDirectory(self, '저장할 경로를 선택합니다.')
         self.inputPathSave.setText(path[0])
         self.listAddMassage("저장할 경로를 선택했습니다.")
-
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    view = MainView()
-    app.exec_()
