@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
     name='autowriter',
     version='1.0',
-    description="Robotic Process Automation",
+    description="A task automation program that lets you quickly and easily automate repetitive Excel tasks.",
     author="Gwansik Kim",
     author_email="gwansikk@icloud.com",
     packages=find_packages(),
